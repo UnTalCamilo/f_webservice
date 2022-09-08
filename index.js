@@ -1,5 +1,5 @@
 const express = require('express');
-var hbs = require('hbs'); // Paginas dinamicas
+var hbs = require('hbs');
 
 const app = express()
 
@@ -9,7 +9,7 @@ var path = require('path');
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'), function (err) { });
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public'))) // app.get is not used, paginas estaticas
+app.use(express.static(path.join(__dirname, 'public'))) 
 app.set('view engine', 'hbs');
 app.set('views', [
     path.join(__dirname, 'views'),
